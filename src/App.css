@@ -1,0 +1,3 @@
+#company-nav-dropdown::after {
+    display: none !important;
+}
