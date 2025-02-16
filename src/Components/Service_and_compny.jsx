@@ -46,38 +46,29 @@ export default function Service_and_compny() {
 
     return (
         <>
-            <Row className="mb-3"> 
-                        <p className="h2 fw-bold text-center">Services</p>
-                <Col className="col-8">
-                    {/* <div className="d-flex flex-column justify-content-center" style={{ height: '60%' }}> */}
-                        <Row>
-                            {service.map((service) => (
-                                <Col key={service.CardTitle} >
-                                    <Card style={{ minWidth: '10rem',minHeight:'8rem' }} className='my-1 text-center bg-white text-dark  '>
-                                        <Card.Body>
-                                            <Card.Title>{service.title}</Card.Title>
-                                            <Button variant="primary">Know More</Button>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            )
-                            )
-                            }
-                        </Row>
-
-                    {/* </div> */}
+            <Row className="mb-3">
+                <p className="h2 fw-bold text-center">Services</p>
+                <Col xs={12} md={8}>
+                    <Row className="justify-content-center">
+                        {service.map((service) => (
+                            <Col key={service.title} xs={12} sm={6} md={4} className="mb-2 d-flex">
+                                <Card className="my-2  text-center bg-white text-dark shadow-sm w-100 d-flex flex-column h-100">
+                                    <Card.Body className="d-flex flex-column">
+                                        <Card.Title className="fw-semibold">{service.title}</Card.Title>
+                                        <Button variant="primary" className="mt-auto">Know More</Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
                 </Col>
-                <Col className="col-4 d-flex justify-content-center align-items-center"> 
-                    
-                        <img
-                            style={{ height: '80%', width: '100%', borderRadius: '.5rem' }}
-                            className="shadow-lg"
-                            src="https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg" alt="" />
-                        {/* <img
-                            style={{ height: '50%', width: '100%' }}
-                            src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1510&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
-
-                    
+                <Col xs={12} md={4} className="d-flex justify-content-center align-items-center">
+                    <img
+                        className="shadow-lg rounded w-100"
+                        style={{ height: "80%", objectFit: "cover" }}
+                        src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Service Illustration"
+                    />
                 </Col>
             </Row>
         </>

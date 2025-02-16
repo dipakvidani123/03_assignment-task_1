@@ -22,17 +22,18 @@ export default function Slider() {
             description: "Enhance brand visibility with SEO-friendly, responsive, and fast-loading websites."
         }
     ];
-    
+
 
     return (
         <Carousel className="mt-3" fade>
             {carouselItems.map((item, index) => (
                 <Carousel.Item key={index}>
-                    <img className="d-block w-100" style={{ height: "20rem" }} src={item.src} alt={item.alt} />
-                    <Carousel.Caption className='text-light fw-bold d-flex flex-column justify-content-center align-items-center position-absolute top-50 start-50 translate-middle'>
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
+                    <img className="d-block w-100" style={{ height: "25rem", objectFit: "cover" }} src={item.src} alt={item.alt} />
+                    <Carousel.Caption className='text-light fw-bold d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50 p-3 rounded'>
+                        <h3 className="text-uppercase text-shadow">{item.title}</h3>
+                        <p className="text-shadow">{item.description}</p>
                     </Carousel.Caption>
+
                 </Carousel.Item>
             ))}
         </Carousel>
